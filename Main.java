@@ -23,7 +23,7 @@ public class Main {
         }
 
         int nameStrinflength = nameString.length();
-        if (nameStrinflength >=5) {
+        if (nameStrinflength >5) {
             throw new Exception("//т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *) ");
         }
         if (nameStrinflength < 3) {
