@@ -41,6 +41,9 @@ public class Main {
 
         } else {
             result1 = getStr(nameString);
+            if(result1==0){
+                throw new Exception("в римской системе счисления нет знака 0");
+            }
             String endResult = convertArabinRome(result1);
             System.out.println(endResult);
         }
@@ -57,7 +60,7 @@ public class Main {
         String num2 = numStr[1];
         int numAction1 = rome(num1);
         int numAction2 = rome(num2);
-        if (numAction1 <= 0) {
+        if (numAction1 <= 0||numAction2<=0) {
             throw new Exception("Число не может быть меньше 1.");
         } else if (numAction1 > 10 || numAction2 > 10) {
             throw new Exception("Число не может быть больше 10.");
@@ -71,6 +74,7 @@ public class Main {
                 throw new Exception("т.к. в римской системе нет отрицательных чисел");
 
             }
+
             return (numAction1 - numAction2);
         } else if (symbol == '/') {
             return (numAction1 / numAction2);
